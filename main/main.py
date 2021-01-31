@@ -6,7 +6,7 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import UniqueConstraint
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = 'mysql://dimeji:Password123#@!@dbs/main'
+app.config["SQLALCHEMY_DATABASE_URI"] = 'mysql+pymysql://dimeji:Password123#@!@dbs/main'
 CORS(app)
 
 db = SQLAlchemy(app)
@@ -51,10 +51,6 @@ def like(id):
         'message': 'success'
     })
 
-
-@app.route('/')
-def index():
-    return "Hello"
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
