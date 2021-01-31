@@ -1,0 +1,25 @@
+version: '3.1'
+services:
+  backends:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 800:5000
+    volumes:
+      - .:/app
+    depends_on:
+      - dbs
+
+  dbs:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: main
+      MYSQL_USER: dimeji
+      MYSQL_PASSWORD: Password123#@!
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - .dbdata:/var/lib/mysql
+    ports:
+      - 33067:3306
