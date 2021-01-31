@@ -8,7 +8,7 @@ from sqlalchemy import UniqueConstraint
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = 'mysql+pymysql://dimeji:Password123#@!@dbs/main'
 CORS(app)
-//npX#z!28Jw_ARP_
+
 db = SQLAlchemy(app)
 
 @dataclass

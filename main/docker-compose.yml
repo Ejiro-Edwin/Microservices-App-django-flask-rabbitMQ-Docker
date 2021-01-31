@@ -11,6 +11,14 @@ services:
     depends_on:
       - dbs
 
+  queue:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: 'python consumer.py'
+    depends_on:
+      - dbs
+
   dbs:
     image: mysql:5.7
     restart: always
