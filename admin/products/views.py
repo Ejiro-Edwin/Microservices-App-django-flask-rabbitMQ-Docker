@@ -3,7 +3,7 @@ from .models import Product, User
 from .serializers import ProductSerializer
 from rest_framework.response import Response
 from rest_framework.views import APIView
-# //from .producer import publish
+from .producer import publish
 import random
 
 
